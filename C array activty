@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main (void)
+{
+    int a[8]={5,33,222,3,4,56,77,4};
+    int sum = 0 , j;
+
+    for (j=0; j<8; j++ )
+    {
+        sum = sum + a[j];
+    }
+    printf("Sum of all array elements: %d\n",sum);
+    
+    return 0;
+}
