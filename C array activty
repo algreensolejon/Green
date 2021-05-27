@@ -1,15 +1,70 @@
 #include <stdio.h>
+#include <string.h>
 
-int main (void)
+
+int main()
 {
-    int a[8]={5,33,222,3,4,56,77,4};
-    int sum = 0 , j;
+    char str[100];
+    int i = 0;
 
-    for (j=0; j<8; j++ )
+    printf("\n  Input a sentence :  "); //<--- Asks the user to input any sentence.
+
+    fgets(str, sizeof(str), stdin);
+
+
+    //Capitalizes every vowel in the string.
+    while(str[i] != '0')
     {
-        sum = sum + a[j];
+        if(str[i] == 'a' ||
+           str[i] == 'e' ||
+           str[i] == 'i' ||
+           str[i] == 'o' ||
+           str[i] == 'u')
+
+        {
+            str[i] = str[i] - 32;
+        }
+        i++;
     }
-    printf("Sum of all array elements: %d\n",sum);
-    
-    return 0;
+
+    printf("\n  String Converted: "); //<--- Prints the converted string.
+    puts(str);
+
+    stringCount(str);
+}
+
+void stringCount(char *str)
+
+{
+    int i, vowels = 0, consonants = 0;
+
+    printf("\n  String Length: %d\n", strlen(str)); // <--- Prints the length of the string.
+
+
+    for(i=0;str[i];i++)
+{
+             //Counts the vowels and consonants.
+             if((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
+{
+
+                            //vowels
+                            if( str[i] == 'A' || str[i] == 'a'
+                             || str[i] =='E'  || str[i] == 'e'
+                             || str[i] == 'I' || str[i] == 'i'
+                             || str[i] == 'O' || str[i] =='o'
+                             || str[i] == 'U' || str [i] == 'u')
+                            vowels++;
+
+                            else
+
+                            //consonants
+                            consonants++;
+}
+}
+
+    printf("\n  Vowels : %d\n", vowels); // <--- Prints the numbers of vowels.
+    printf("\n  Consonants : %d\n", consonants); // <--- Prints the numbers of consonants.
+
+
+        return 0;
 }
