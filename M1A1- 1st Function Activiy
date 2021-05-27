@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    printf ("1st C Functions Activity\n");
+    printf ("Total and Average Grade of Student\n");
+
+    float Math,Science,Filipino,English,PE, Sum, Average;
+    printf ("Enter Math: ");
+    scanf("%f",&Math);
+    
+    printf ("Enter Science: ");
+    scanf("%f",&Science);
+    
+    printf ("Enter Filipino: ");
+    scanf("%f",&Filipino);
+    
+    printf ("Enter English: ");
+    scanf("%f",&English);
+    
+    printf ("Enter PE: ");
+    scanf("%f",&PE);
+
+
+    Sum = Math+Science+Filipino+English+PE;
+    printf("Total = %.2f\n", Sum );
+
+    Average = (Math+Science+Filipino+English+PE)/5;
+    printf("Average = %.2f\n", Average);
+
+
+}
