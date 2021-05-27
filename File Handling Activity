@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+
+{
+  FILE *fptr;
+
+  int j,i;
+  char str[1000];
+  char str1;
+  char fname[1000];
+
+
+
+    //INPUT//
+    printf("\n [A PROGRAM THAT APPEND MULTIPLE LINES IN A TEXT FILE] \n\n");
+	printf( " Input the file location : "); //<--- Asks the user how many lines to be appended.//
+	scanf("%s",fname);
+
+    fptr = fopen(fname, "j");
+
+   if(fptr==NULL)
+
+    {
+      printf(" Error in opening file!");
+      return (1);
+    }
+
+
+
+
+    printf( "\n Input how many lines to be appended: "); //<--- Asks the user how many lines to be appended.//
+    scanf("%d", &b);
+
+
+
+    //TEXT//
+    for (j = 0 ; j < i+1 ; j++)
+
+    {
+    fgets(str, sizeof str, stdin);
+    fputs(str, fptr);
+    }
+
+    fclose (fptr);
+
+
+
+    //OUTPUT//
+    fptr = fopen (fname, "r"); //<--- Reads the "Inside of the text.txt"//
+    printf("\n Inside of the '%s' is: ",fname);
+
+    str1 = fgetc(fptr);
+
+
+
+    //END OF FILE//
+    while
+
+        (str1 != EOF)
+    {
+        printf ("%c", str1);
+        str1 = fgetc(fptr);
+    }
+
+        fclose (fptr);
+
+
+
+    return 0;
+
+}
