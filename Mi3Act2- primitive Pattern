@@ -1,0 +1,157 @@
+#include <GL/glut.h> 
+
+void display();
+void reshape(int, int);
+
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGB); 
+    glutInitWindowPosition(300, 0); 
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("Mi3Act2 - Primitive Patterns");
+
+    glutDisplayFunc(display); 
+    glutReshapeFunc(reshape);
+
+    glClearColor(1.0f, 0.0f, 1.0f, 0.0f);
+    glutMainLoop();// Loop All Functions
+}
+
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glLoadIdentity();
+
+    // SQUARE - BASE
+
+    glBegin(GL_LINES);
+    glVertex2f(7.5, 7.5);
+    glVertex2f(-5, 7.5);
+
+    glBegin(GL_LINES);
+    glVertex2f(-5, 7.5);
+    glVertex2f(-5, -5);
+
+    glBegin(GL_LINES);
+    glVertex2f(-5, -5);
+    glVertex2f(7.5, -5);
+
+    glBegin(GL_LINES);
+    glVertex2f(7.5, -5);
+    glVertex2f(7.5, 7.5);
+
+    glEnd();
+    glFlush();
+
+
+
+    //squares
+    
+    //squares color green
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(0, 7.5);
+    glVertex2f(-2.5, 7.5);
+    glVertex2f(-2.5, 5);
+    glVertex2f(0, 5);
+
+    
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(5, 7.5);
+    glVertex2f(2.5, 7.5);
+    glVertex2f(2.5, 5);
+    glVertex2f(5, 5);
+
+    
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(-2.5, 5);
+    glVertex2f(-5, 5);
+    glVertex2f(-5, 2.5);
+    glVertex2f(-2.5, 2.5);
+
+    
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(2.5, 5);
+    glVertex2f(0, 5);
+    glVertex2f(0, 2.5);
+    glVertex2f(2.5, 2.5);
+
+    
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(7.5, 5);
+    glVertex2f(5, 5);
+    glVertex2f(5, 2.5);
+    glVertex2f(7.5, 2.5);
+
+   
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(0, 2.5);
+    glVertex2f(-2.5, 2.5);
+    glVertex2f(-2.5, 0);
+    glVertex2f(0, 0);
+
+   
+    glColor3f(0.0f, 1.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(5, 2.5);
+    glVertex2f(2.5, 2.5);
+    glVertex2f(2.5, 0);
+    glVertex2f(5, 0);
+    
+
+    // squares color purple
+    glColor3f(1.0f, 0.0f, 1.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(-2.5, 0);
+    glVertex2f(-5, 0);
+    glVertex2f(-5, -2.5);
+    glVertex2f(-2.5, -2.5);
+
+  
+    
+
+   
+    glColor3f(1.0f, 0.0f, 1.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(7.5, 0);
+    glVertex2f(5, 0);
+    glVertex2f(5, -2.5);
+    glVertex2f(7.5, -2.5);
+
+    
+    glColor3f(1.0f, 0.0f, 1.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(0, -2.5);
+    glVertex2f(-2.5, -2.5);
+    glVertex2f(-2.5, -5);
+    glVertex2f(0, -5);
+
+    
+    glColor3f(1.0f, 0.0f, 1.0f); 
+    glBegin(GL_QUADS);
+    glVertex2f(5, -2.5);
+    glVertex2f(2.5, -2.5);
+    glVertex2f(2.5, -5);
+    glVertex2f(5, -5);
+
+    glEnd(); 
+    glFlush(); 
+}
+
+
+void reshape(int w, int h)
+{
+    glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-10, 10, -10, 10);
+    glMatrixMode(GL_MODELVIEW);
+}
