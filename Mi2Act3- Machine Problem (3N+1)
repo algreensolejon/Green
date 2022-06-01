@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num;
+    
+        cout << "Input any Positive integers: ";
+        cin >> num;
+        
+        while (num != 1)
+	{
+		// If number is odd
+		if (num & 1) 
+		{
+			num = 3 * num + 1;
+		}
+		// If number is even
+		else 
+		{
+		    num = num/2;
+		}
+		cout << "current given Value is " << num << endl;
+	}
+	
+	return 0;
+}
