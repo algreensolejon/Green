@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    int choice, payment, c1, c2, c3;
+    cout << "\n\n\t    **Softdrinks Vending machine**" << endl;
+    cout << "\n\t\tSelect your order:" << endl;
+    cout << "\t\t[1]Pepsi\t = 100" << endl;
+    cout << "\t\t[2]Dr.Pepper\t = 120" << endl;
+    cout << "\t\t[3]Coca-Cola\t = 95" << endl;
+    
+    cout << "\n\t\tChoice:";
+    cin >> choice;
+    
+    switch(choice){
+    	
+    case 1:
+    cout << "\t\tInput Payment: ";
+    cin >> payment;
+    if(payment>=100){
+        cout << "\t\tYou have purchased an item." << endl;
+        c1 = payment - 100;
+        cout << "\t\tChange: " << c1 << endl;
+    }
+    else{
+        cout << "\t\tYou don't have enough funds.\n\n\n\n";
+    }
+    break;
+    
+    case 2:
+    cout << "\t\tInput Payment: ";
+    cin >> payment;
+    if(payment>=120){
+        cout << "\t\tYou have purchased an item." << endl;
+        c2 = payment - 120;
+        cout << "\t\tChange: " << c2 << endl;
+    }
+    else{
+        cout << "\t\tYou don't have enough funds\n\n\n\n";
+    }
+    break;
+    
+    case 3:
+    cout << "\t\tInput Payment: ";
+    cin >> payment;
+    if(payment>=95){
+        cout << "\t\tYou have purchased an item." << endl;
+        c3 = payment - 95;
+        cout << "\t\tChange: " << c3 << endl;
+    }
+    else{
+        cout << "\n\t\tYou don't have enough funds.\n\n\n\n";
+    }
+    break;
+    
+    default:
+    cout << "\n\t\tInvalid Input." << endl;
+    }
+    
+    return 0;
+}
