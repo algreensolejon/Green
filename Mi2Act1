@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int revmin=3000, sec=60, degree=360, revsec, degpersec;
+    
+    cout << "\n\n\t\tCalculating the total degrees a ball creates in a second with 3000 revolutions per minute.\n\n" << endl;
+    
+ //calculate
+    revsec = revmin * degree;
+   degpersec = revsec / sec;
+    
+    cout << "\t\tThe total degrees of the ball it spins in a second is " << degpersec << "°\n\n";
+    
+    return 0;
+}
